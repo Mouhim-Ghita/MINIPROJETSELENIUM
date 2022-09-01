@@ -1,13 +1,15 @@
 package pages;
 
-import org.junit.Assert;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.BaseUtils;
+import org.testng.Assert;
+import utils.BaseTools;
 
-public class VoirPanier extends BaseUtils {
+
+public class VoirPanier extends BaseTools {
 
     WebDriver driver;
 //xpath
@@ -33,7 +35,7 @@ public class VoirPanier extends BaseUtils {
     public void  verifySiArticleChoisiQuiEstAjouteAuPanier() {
         waitElementToBeVisible(driver, xpath_product_added);
         String prod = xpath_product_added.getText();
-        Assert.assertTrue("not ok", prod.equals(pro_actual));
+        Assert.assertTrue( prod.equals(pro_actual),"not ok");
         System.out.println("le produit qu'on ajouté  cest bien  ce lui qu'on a choisi" +prod);
 
 

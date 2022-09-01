@@ -26,7 +26,7 @@ public class ArticlesFiltredByCategory extends BaseTools {
     WebElement xpath_prix;
     @FindBy(xpath = "//h3[contains(text(),'Data')]")
     WebElement xpath_article_name;
-    @FindBy(xpath = "//h3[contains(text(),'Data')]/following::a[1]")
+    @FindBy(xpath = "//h3[text()='JS Data Structures and Algorithm']/parent::a/following-sibling::a[text()='Add to basket']")
     WebElement xpath_Add_To_Basket;
     @FindBy(xpath = "//a[text()='View Basket']")
     WebElement xpath_view_basket;

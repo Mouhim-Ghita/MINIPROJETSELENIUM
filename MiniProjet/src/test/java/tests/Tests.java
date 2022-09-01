@@ -36,7 +36,7 @@ public class Tests extends SetUpTeardown {
         pagepanier.verifier_pagepanier();
         pagepanier.verifier_panier("JS Data Structures and Algorithm",
                 "₹150.00","1","₹150.00");
-        pagepanier.verifier_basket("₹150.00","₹7.50","₹157.50");
+        pagepanier.verifier_basket("₹150.00","₹3.00","₹153.00");
         pagepanier.verifier_buttoncheckout();
 
     }
@@ -45,8 +45,9 @@ public class Tests extends SetUpTeardown {
     @Test(priority = 2)
     public void TestHistorique()
     {
-        System.out.println("lancement bien fait");
+        System.out.println("====Tester le bon ajout de l'element dans l'historique====");
         MyAccount monCompte=new MyAccount(driver);
+        monCompte.cliquerMyAccount();
         monCompte.CliquersurOrder();
         Orders order=new Orders(driver);
         order.cliquersurView();

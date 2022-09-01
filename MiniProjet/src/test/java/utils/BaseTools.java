@@ -7,14 +7,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BaseTools {
-    int timeOut =90;
+    int timeOut =10;
     public static WebElement webElement;
 
     public WebElement waitforVisibility(WebDriver driver, String elementname, WebElement elementlocator, Boolean logiftrue){
         WebElement element;
         String msgIftrue = "L'element " + elementname + " est visible";
         String msgIffalse = "L'element " + elementname + " est non visible";
-        WebDriverWait wait = new WebDriverWait(driver, 40);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         wait.withMessage(msgIftrue);
         try{
             element = wait.until(ExpectedConditions.visibilityOf(elementlocator));
@@ -28,14 +28,14 @@ public class BaseTools {
     }
 
     public void waitandclick(WebDriver driver, WebElement elementlocator){
-        WebDriverWait wait = new WebDriverWait(driver,12);
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(12));
         wait.until(ExpectedConditions.visibilityOf(elementlocator)).click();
     }
 
 
     public WebElement waitElementToBeVisible(WebDriver driver,WebElement webElementFindBy) {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, timeOut);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
             webElement = (WebElement) wait.until(ExpectedConditions.visibilityOf(webElementFindBy));
             System.out.println(" ==> The element is Visible");
         } catch (Exception e) {
@@ -46,9 +46,8 @@ public class BaseTools {
 
     public WebElement waitElementToBeClickable(WebDriver driver,WebElement webElementFindBy) {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, timeOut);
+            WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(timeOut));
             webElement = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(webElementFindBy));
-            webElement.click();
             System.out.println(" ==> The element is Clickable");
         } catch (Exception e) {
             System.out.println(" ==> The element " + webElement + " is not Clickable after " + timeOut);
