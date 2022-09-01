@@ -32,7 +32,7 @@ public class Panier extends BaseTools {
     WebElement xpath_basket_title;
     @FindBy(xpath = " //td[@data-title='Subtotal']/child::span")
     WebElement  xpath_basket_subtotal;
-    @FindBy(xpath= "//td[@data-title='Roaming Tax']/child::span" )
+    @FindBy(xpath= "//td[@data-title='Tax']/child::span" )
     WebElement xpath_basket_tax;
     @FindBy(xpath = "//td[@data-title='Total']//child::strong/child::span")
     WebElement xpath_basket_total;

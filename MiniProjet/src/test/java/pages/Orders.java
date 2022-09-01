@@ -18,5 +18,6 @@ public class Orders {
     public void cliquersurView()
     {
         boutonView.click();
+        System.out.println("view cliquer");
     }
 }
