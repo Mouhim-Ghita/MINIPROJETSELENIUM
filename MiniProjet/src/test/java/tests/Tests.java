@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import pages.DetailsOrder;
 import pages.MyAccount;
 import pages.Orders;
+import pages.Panier;
 import utils.SetUpTeardown;
 
 public class Tests extends SetUpTeardown {
@@ -24,4 +25,23 @@ public class Tests extends SetUpTeardown {
         detailsOrder.verifierMail();
         detailsOrder.verifierPhone();
     }
+
+    @Test
+    public void scenarioverifypanier(){
+        Panier pagepanier = new Panier(driver);
+        pagepanier.verifier_pagepanier();
+        pagepanier.verifier_panier("JS Data Structures and Algorithm",
+                "₹150.00","1","₹150.00");
+        pagepanier.verifier_basket("₹150.00","₹7.50","₹157.50");
+        pagepanier.verifier_buttoncheckout();
+
+    }
+
+
+
+
+
+
+
+
 }

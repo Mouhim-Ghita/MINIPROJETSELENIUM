@@ -7,7 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 public class SetUpTeardown {
     @FindBy(xpath = "//input[@name='username']")
@@ -19,7 +21,7 @@ public class SetUpTeardown {
 
     public static WebDriver driver;
 
-     @BeforeMethod
+     @BeforeTest
      public void OpenBrowserAndLogin()
     {
         String driverChrome="src\\test\\java\\Tools\\chromedriver.exe";
@@ -34,7 +36,7 @@ public class SetUpTeardown {
         boutonLogin.click();
 
     }
-    @AfterMethod
+    @AfterTest
     public void Teardown()
     {
         System.out.println("fin des tests");
