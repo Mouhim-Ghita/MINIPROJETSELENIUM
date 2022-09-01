@@ -32,7 +32,7 @@ public class Tests extends SetUpTeardown {
         pagepanier.verifier_pagepanier();
         pagepanier.verifier_panier("JS Data Structures and Algorithm",
                 "₹150.00","1","₹150.00");
-        pagepanier.verifier_basket("₹150.00","₹7.50","₹157.50");
+        pagepanier.verifier_basket("₹150.00","₹3.00","₹153.00");
         pagepanier.verifier_buttoncheckout();
 
     }
